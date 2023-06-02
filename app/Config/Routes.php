@@ -30,21 +30,30 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'HomeController::index');
-$routes->get('cek-peminjaman', 'HomeController::showAll');
-// Save Data Peminjaman
-$routes->post('/', 'TransactionController::save');
-$routes->post('cari-peminjaman', 'TransactionController::search');
-$routes->get('peminjaman/print/(:segment)', 'TransactionController::print/$1');
 
 $routes->group('', ['filter' => 'usersAuth'], function ($routes) {
-    $routes->get('dashboard', 'DashboardController::index');
-    $routes->get('peminjaman', 'TransactionController::index');
-    $routes->get('peminjaman/show/(:segment)', 'TransactionController::show/$1');
-    $routes->get('peminjaman/edit/(:segment)', 'TransactionController::edit/$1');
-    $routes->post('peminjaman/update/(:segment)', 'TransactionController::update/$1');
+   // Dashboard
+   $routes->get('dashboard', 'DashboardController::index');
+
+   // Data Karyawan
+   $routes->get('karyawan', 'EmployeeController::index');
+
+   // Data Peminjaman
+   $routes->get('transaksi', 'TransactionController::index');
+   $routes->get('transaksi/show/(:segment)', 'TransactionController::show/$1');
+   $routes->get('transaksi/add', 'TransactionController::add');
+   $routes->post('transaksi/save', 'TransactionController::save');
+   $routes->get('transaksi/edit/(:segment)', 'TransactionController::edit/$1');
+   $routes->post('transaksi/update/(:segment)', 'TransactionController::update/$1');
+   $routes->get('transaksi/print/(:segment)', 'TransactionController::print/$1');
+
+   // Rubah kata sandi
+   $routes->get('change-password', 'AuthController::changePassword');
+   $routes->post('change-password/(:segment)', 'AuthController::changePasswordVerif/$1');
 });
 
 $routes->post('login', 'AuthController::loginVerif');
+$routes->post('register', 'AuthController::registerVerif');
 $routes->get('logout', 'AuthController::logout');
 
 
@@ -62,5 +71,5 @@ $routes->get('logout', 'AuthController::logout');
  * needing to reload it.
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
-    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+   require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

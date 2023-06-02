@@ -6,11 +6,11 @@ use CodeIgniter\Model;
 
 class DocumentModel extends Model
 {
-    protected $table            = 'documents';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = 'object';
-    protected $allowedFields    = [
-        'transaction_no_permintaan', 'file'
-    ];
+   protected $table            = 'documents';
+   protected $primaryKey       = 'doc_id';
+   protected $useAutoIncrement = true;
+   protected $returnType       = 'object';
+   protected $allowedFields    = [
+      'transaction_number', 'title_file', 'request_file'
+   ];
 }

@@ -10,31 +10,33 @@
 <!-- CSS DataTables -->
 <link rel="stylesheet" href="<?= site_url('assets/dataTables/dataTables.bootstrap5.min.css'); ?>">
 <style>
-    * {
-        font-family: 'Quicksand', sans-serif;
-    }
+   * {
+      font-family: 'Quicksand', sans-serif;
+   }
 
-    .pem-doc {
-        font-family: 'Pompiere', cursive !important;
-        color: #f4623a !important;
-    }
+   .pem-doc {
+      font-family: 'Pompiere', cursive !important;
+      color: #f4623a !important;
+   }
 
-    .text-pri {
-        color: #f4623a !important;
-    }
+   .text-pri {
+      color: #f4623a !important;
+   }
 
-    .bg-pri {
-        background-color: #f4623a !important;
-    }
+   .bg-pri {
+      background-color: #f4623a !important;
+   }
 
-    .border-pri {
-        border: 1px solid #f4623a;
-        color: #f4623a !important;
-    }
+   .border-pri {
+      border: 1px solid #f4623a;
+      color: #f4623a !important;
+   }
 
-    .border-pri:hover {
-        border: 1px solid white;
-        color: white !important;
-        background-color: #f4623a !important;
-    }
+   .border-pri:hover {
+      border: 1px solid white;
+      color: white !important;
+      background-color: #f4623a !important;
+   }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
